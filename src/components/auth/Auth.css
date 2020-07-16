@@ -1,0 +1,53 @@
+:root {
+    --green: #81B29A;
+    --red: #E07A5F;
+}
+
+#main-content {
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;    
+    border: 2px solid black;
+    box-shadow: 4px 8px 7px 0px rgba(0,0,0,0.31);
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.submit-button {
+    background-color: var(--green) !important;
+    color: black !important;
+}
+
+.cancel-button {
+    background-color: var(--red) !important;
+    color: black !important;
+}
+
+.submit-button:hover,.cancel-button:hover {
+    opacity: .75;
+}
+
+#register-form-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.register-form-div {
+    display: flex;
+    justify-content: center;
+}
+
+.register-form-field {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
