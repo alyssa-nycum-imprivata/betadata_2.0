@@ -1,5 +1,6 @@
 :root {
     --green: #81B29A;
+    --red: #E07A5F;
 }
 
 #main-content {
@@ -25,7 +26,28 @@
     color: black !important;
 }
 
-.submit-button:hover {
+.cancel-button {
+    background-color: var(--red) !important;
+    color: black !important;
+}
+
+.submit-button:hover,.cancel-button:hover {
     opacity: .75;
+}
+
+#register-form-input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.register-form-div {
+    display: flex;
+    justify-content: center;
+}
+
+.register-form-field {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
 }
 

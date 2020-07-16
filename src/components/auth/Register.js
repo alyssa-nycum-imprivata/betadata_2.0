@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import UserApiManager from '../../modules/UserApiManager';
+import { Button, Form } from 'semantic-ui-react';
+import './Auth.css';
 
 const Register = (props) => {
     const [credentials, setCredentials] = useState({ firstName: "", lastName: "", email: "", username: "", password: "" });
@@ -25,49 +27,60 @@ const Register = (props) => {
     };
 
     return (
-        <form className="form--login" onSubmit={handleRegister}>
-            <h1 className="h3 mb-3 font-weight-normal">Register</h1>
-            <fieldset>
-                <label htmlFor="firstName"> First Name </label>
-                <input onChange={handleFieldChange} type="text"
-                    id="firstName"
-                    placeholder="First Name"
-                    required="" autoFocus="" />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="lastName"> Last Name </label>
-                <input onChange={handleFieldChange} type="text"
-                    id="lastName"
-                    placeholder="Last Name"
-                    required="" autoFocus="" />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="email"> Email </label>
-                <input onChange={handleFieldChange} type="email"
-                    id="email"
-                    placeholder="Email Address"
-                    required="" autoFocus="" />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="username"> Username </label>
-                <input onChange={handleFieldChange} type="text"
-                    id="username"
-                    placeholder="Username"
-                    required="" autoFocus="" />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="password"> Password </label>
-                <input onChange={handleFieldChange} type="password"
-                    id="password"
-                    placeholder="Password"
-                    required="" autoFocus="" />
-            </fieldset>
-            <fieldset>
-                <button type="submit">
+        <Form className="form" onSubmit={handleRegister}>
+            <h1 className="form-title">Register</h1>
+            <div id="register-form-input-container">
+                <div className="register-form-div">
+                    <Form.Field className="register-form-field">
+                        <label htmlFor="firstName"> First Name </label>
+                        <input onChange={handleFieldChange} type="text"
+                            id="firstName"
+                            placeholder="First Name"
+                            required="" autoFocus="" />
+                    </Form.Field>
+                    <Form.Field className="register-form-field">
+                        <label htmlFor="lastName"> Last Name </label>
+                        <input onChange={handleFieldChange} type="text"
+                            id="lastName"
+                            placeholder="Last Name"
+                            required="" autoFocus="" />
+                    </Form.Field>
+                </div>
+                <div className="register-form-div">
+                    <Form.Field className="register-form-field">
+                        <label htmlFor="email"> Email </label>
+                        <input onChange={handleFieldChange} type="email"
+                            id="email"
+                            placeholder="Email Address"
+                            required="" autoFocus="" />
+                    </Form.Field>
+                    <Form.Field className="register-form-field">
+                        <label htmlFor="username"> Username </label>
+                        <input onChange={handleFieldChange} type="text"
+                            id="username"
+                            placeholder="Username"
+                            required="" autoFocus="" />
+                    </Form.Field>
+                </div>
+                <div className="register-form-div">
+                    <Form.Field className="register-form-field">
+                        <label htmlFor="password"> Password </label>
+                        <input onChange={handleFieldChange} type="password"
+                            id="password"
+                            placeholder="Password"
+                            required="" autoFocus="" />
+                    </Form.Field>
+                </div>
+            </div>
+            <div className="form-button-div">
+                <Button primary className="submit-button" type="submit">
                     Register
-                </button>
-            </fieldset>
-        </form>
+                </Button>
+                <Button primary className="cancel-button" onClick={() => props.history.push("/")}>
+                    Cancel
+                </Button>
+            </div>
+        </Form>
     );
 };
 
