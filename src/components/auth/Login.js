@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import UserApiManager from '../../modules/UserApiManager';
+import { Button, Form } from 'semantic-ui-react';
+import './Auth.css';
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ username: "", password: "" });
@@ -26,28 +28,26 @@ const Login = (props) => {
     };
 
     return (
-        <form className="form--login" onSubmit={handleLogin}>
-            <h1 className="h3 mb-3 font-weight-normal">Login</h1>
-            <fieldset>
-                <label htmlFor="username"> Username </label>
+        <Form className="form" id="login-form" onSubmit={handleLogin}>
+            <h1 className="form-title">Login</h1>
+            <Form.Field>
+                <label htmlFor="username">Username</label>
                 <input onChange={handleFieldChange} type="text"
                     id="username"
                     placeholder="Username"
                     required="" autoFocus="" value={credentials.username} />
-            </fieldset>
-            <fieldset>
-                <label htmlFor="password"> Password </label>
+            </Form.Field>
+            <Form.Field>
+                <label htmlFor="password">Password</label>
                 <input onChange={handleFieldChange} type="password"
                     id="password"
                     placeholder="Password"
                     required="" autoFocus="" value={credentials.password} />
-            </fieldset>
-            <fieldset>
-                <button type="submit">
-                    Login
-                </button>
-            </fieldset>
-        </form>
+            </Form.Field>
+            <Button primary className="submit-button" type="submit">
+                Login
+            </Button>
+        </Form>
     );
 };
 
