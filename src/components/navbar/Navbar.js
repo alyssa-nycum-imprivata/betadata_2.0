@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import './Navbar.css';
 
 const NavBar = (props) => {
     const handleLogout = () => {
@@ -9,23 +10,27 @@ const NavBar = (props) => {
 
     return (
         <header>
-            <h1>BetaData</h1>
             <nav>
-                <ul>
-                    {props.hasUser ? 
-                        <li>
-                            <Link to="" onClick={handleLogout}>Logout</Link>
-                        </li>
-                    :
-                        <>
-                            <li>
-                                <Link to="/login">Login</Link>
+                <ul id="nav-list">
+                    <div id="site-title-div">
+                        <li id="site-title"><h1>BetaData</h1></li>
+                    </div>
+                    <div id="nav-link-div">
+                        {props.hasUser ? 
+                            <li className="nav-link">
+                                <Link className="link" to="" onClick={handleLogout}>Logout</Link>
                             </li>
-                            <li>
-                                <Link to="/register">Register</Link>
-                            </li>
-                        </>
-                    }
+                        :
+                            <>
+                                <li className="nav-link">
+                                    <Link className="link"to="/login">Login</Link>
+                                </li>
+                                <li className="nav-link">
+                                    <Link className="link" to="/register">Register</Link>
+                                </li>
+                            </>
+                        }
+                    </div>
                 </ul>
             </nav>
         </header>

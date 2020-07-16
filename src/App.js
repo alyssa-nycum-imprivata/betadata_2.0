@@ -21,7 +21,9 @@ const App = () => {
   return (
     <Router>
       <NavBar hasUser={hasUser} clearUser={clearUser} />
-      <ApplicationViews hasUser={hasUser} setUser={setUser} />
+      <div id="main-content">
+        <ApplicationViews hasUser={hasUser} setUser={setUser} />
+      </div>
     </Router>
   );
 };

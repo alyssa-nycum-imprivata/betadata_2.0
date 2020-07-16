@@ -1,0 +1,29 @@
+#nav-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding-left: 0;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+#site-title-div {
+    margin-left: 20px;
+}
+
+#nav-link-div {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-link {
+    margin-left: 10px;
+}
+
+.link {
+    color: black !important;
+}
+
